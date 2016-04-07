@@ -13,7 +13,6 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'wincent/command-t'
 " Plugin 'vim-scripts/FuzzyFinder.git'
 " All of your Plugins must be added before the following line
@@ -48,10 +47,7 @@ silent! map <F3> :NERDTreeFind<CR>
 let g:NERDTreeToggle="<F2>"
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
-
-" look nice
-let python_highlight_all=1
-syntax on
+let g:ycm_confirm_extra_conf = 0
 
 " hide .pyc
 let NERDTreeIgnore=['\.pyc$', '\~$']
