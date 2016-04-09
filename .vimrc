@@ -11,10 +11,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'"
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'wincent/command-t'
-" Plugin 'vim-scripts/FuzzyFinder.git'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -30,7 +30,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 set background=dark
-colorscheme desert
 syntax on
 set number
 set smartindent
@@ -39,6 +38,9 @@ set shiftwidth=4
 set expandtab
 set showmatch
 set guifont=Source\ Code\ Pro
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
 " Annoying homebrew vim thing
 set backspace=indent,eol,start
 silent! nmap <C-p> :NERDTreeToggle<CR>
@@ -48,6 +50,14 @@ let g:NERDTreeToggle="<F2>"
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 let g:ycm_confirm_extra_conf = 0
+<<<<<<< HEAD
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:solarized_termcolors=256
+colorscheme solarized
+let g:NERDTreeRespectWildIgnore = 1
+set wildignore+=node_modules,*.o,*.obj,.git,*.pyc
+=======
 
 " hide .pyc
 let NERDTreeIgnore=['\.pyc$', '\~$']
+>>>>>>> f057b9d... cleanup
