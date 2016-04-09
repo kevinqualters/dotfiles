@@ -38,6 +38,9 @@ set shiftwidth=4
 set expandtab
 set showmatch
 set guifont=Source\ Code\ Pro
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
 " Annoying homebrew vim thing
 set backspace=indent,eol,start
 silent! nmap <C-p> :NERDTreeToggle<CR>
@@ -47,8 +50,14 @@ let g:NERDTreeToggle="<F2>"
 let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 let g:ycm_confirm_extra_conf = 0
+<<<<<<< HEAD
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:solarized_termcolors=256
 colorscheme solarized
 let g:NERDTreeRespectWildIgnore = 1
 set wildignore+=node_modules,*.o,*.obj,.git,*.pyc
+=======
+
+" hide .pyc
+let NERDTreeIgnore=['\.pyc$', '\~$']
+>>>>>>> f057b9d... cleanup
