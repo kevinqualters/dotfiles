@@ -41,9 +41,7 @@ set background=dark
 syntax on
 set number
 set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set showmatch
 set guifont=Source\ Code\ Pro
 silent! nmap <C-p> :NERDTreeToggle<CR>
@@ -55,7 +53,11 @@ let g:NERDTreeMapPreview="<F4>"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:solarized_termcolors=256
+let g:syntastic_javascript_checkers = ['eslint']
 colorscheme solarized
 let g:NERDTreeRespectWildIgnore = 1
-set wildignore+=node_modules,*.o,*.obj,.git,*.pyc
+set wildignore+=node_modules,*.o,*.obj,.git,*.pyc,dist
 set laststatus=2
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
