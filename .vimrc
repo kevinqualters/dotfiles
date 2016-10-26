@@ -22,7 +22,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'dyng/ctrlsf.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,7 +43,7 @@ set background=dark
 syntax on
 set number
 set smartindent
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=4 expandtab shiftwidth=4 smarttab
 set showmatch
 set guifont=Source\ Code\ Pro
 silent! nmap <C-p> :NERDTreeToggle<CR>
@@ -58,6 +60,8 @@ colorscheme solarized
 let g:NERDTreeRespectWildIgnore = 1
 set wildignore+=node_modules,*.o,*.obj,.git,*.pyc,dist
 set laststatus=2
-
+nnoremap <Leader>c :CtrlSF
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" Open help in tab not window
+cabbrev help tab help
